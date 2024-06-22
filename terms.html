@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>CREATORO</title>
+    <meta name="description" content="Welcome to the future of cryptocurrency investing.">
+    <link rel="shortcut icon" href="/img/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="index.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
@@ -11,77 +13,88 @@
     <div
       class="h-screen w-full text-white relative flex flex-col gap-[50px] md:gap-[70px]"
     >
-      <header class="absolute h-[64px] w-full border-b border-[#303030]">
+      <div class="fixed top-0 left-0 z-20 h-fit w-full flex flex-col">
         <div
-          class="max-w-screen-xl h-full mx-auto flex flex-row px-5 md:px-[30px] justify-between items-center"
+          class="w-full h-[49px] flex justify-center text-black items-center bg-[#FF8A08]"
         >
-          <a href="/index.html" class="flex flex-row align-center gap-[10px]">
-            <img
-              src="img/logo.svg"
-              alt="logo"
-              class="w-[44px] h-[44px] object-cover"
-            />
-            <h1 class="font-bold text-[30px] md:block hidden">CREATORO</h1>
-          </a>
-          <ul class="md:flex flex-row hidden gap-6">
-            <li>
-              <a
-                href="/index.html"
-                class="text-base text-[#F3EEFC] leading-[24px]"
-                href="/"
-                >INTRODUCTION</a
-              >
-            </li>
-            <li>
-              <a
-                href="#why"
-                class="text-base text-[#F3EEFC] leading-[24px]"
-                href="/"
-                >WHY</a
-              >
-            </li>
-            <li>
-              <a
-                href="#price"
-                class="text-base text-[#F3EEFC] leading-[24px]"
-                href="/"
-                >PRICE</a
-              >
-            </li>
-            <li>
-              <a
-                href="#how"
-                class="text-base text-[#F3EEFC] leading-[24px]"
-                href="/"
-                >HOW</a
-              >
-            </li>
-            <li>
-              <a
-                href="#features"
-                class="text-base text-[#F3EEFC] leading-[24px]"
-                href="/"
-                >FEATURES</a
-              >
-            </li>
-            <li>
-              <a
-                href="/terms.html"
-                class="text-base text-[#F3EEFC] leading-[24px]"
-                >TERMS</a
-              >
-            </li>
-          </ul>
-          <div>
-            <button
-              class="px-[21px] py-[12px] bg-gradient-to-r from-[#6F25F5] to-[#8346F0] text-[18px] leading-[21px] outline-none border-none font-bold interact-button"
-            >
-              Connect wallet
-            </button>
-          </div>
+          <p class="md:text-lg text-sm leading-[24px] font-medium">
+            11 454 users worldwide use our platform 🔥
+          </p>
         </div>
-      </header>
-      <div class="w-full pt-[100px]">
+        <header class="h-[64px] bg-black w-full border-b border-[#303030]">
+          <div
+            class="max-w-screen-xl h-full mx-auto flex flex-row px-5 md:px-[30px] justify-between items-center"
+          >
+            <a href="/" class="flex flex-row align-center gap-[10px]">
+              <h1 class="font-[900] md:text-[40px] text-[25px]">
+                <span class="italic text-white">CREA</span
+                ><span
+                  class="bg-clip-text text-transparent bg-gradient-to-r from-white to-[#fce28d]"
+                  >TORO</span
+                >
+              </h1>
+            </a>
+            <ul class="md:flex flex-row hidden gap-6">
+              <li>
+                <a
+                  href="/"
+                  class="text-base text-[#F3EEFC] leading-[24px]"
+                  href="/"
+                  >INTRODUCTION</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#why"
+                  class="text-base text-[#F3EEFC] leading-[24px]"
+                  href="/"
+                  >WHY</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#price"
+                  class="text-base text-[#F3EEFC] leading-[24px]"
+                  href="/"
+                  >PRICE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#how"
+                  class="text-base text-[#F3EEFC] leading-[24px]"
+                  href="/"
+                  >HOW</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#features"
+                  class="text-base text-[#F3EEFC] leading-[24px]"
+                  href="/"
+                  >FEATURES</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/terms.html"
+                  class="text-base text-[#F3EEFC] leading-[24px]"
+                  >TERMS</a
+                >
+              </li>
+            </ul>
+            <div>
+              <button
+                id=""
+                class="px-[21px] py-[12px] normal-case bg-[#FFC100] text-black text-[18px] leading-[21px] outline-none border-none font-bold rounded-[10px] interact-button"
+              >
+                Connect wallet
+              </button>
+            </div>
+          </div>
+        </header>
+      </div>
+      <div class="w-full pt-[150px]">
         <div class="max-w-screen-xl px-5 md:px-6 mx-auto flex flex-col gap-5">
           <h1 class="text-6xl md:leading-[90px] font-bold">
             TERMS & CONDITIONS
@@ -230,9 +243,12 @@
           </p>
         </div>
       </div>
-      <div id="terms" class="w-full pb-10 pt-10">
+      <div
+        id="terms"
+        class="w-full pb-10 pt-10 flex flex-col gap-10 md:gap-[70px]"
+      >
         <div
-          class="px-5 md:px-6 mx-auto max-w-screen-xl flex gap-[50px] flex-col md:flex-row justify-between items-center"
+          class="px-5 md:px-6 mx-auto max-w-screen-xl w-full flex gap-[50px] flex-col md:flex-row justify-between items-center"
         >
           <ul class="flex md:flex-row flex-wrap gap-10">
             <a class="cursor-pointer" href="/terms.html">
@@ -257,6 +273,9 @@
             alt="icons"
             class="md:w-[320px] w-full h-[20px]"
           />
+        </div>
+        <div class="max-w-screen-xl mx-auto w-full px-5 md:px-6">
+          <p>© COPYRIGHT 2024 CREATORO | All rights reserved</p>
         </div>
       </div>
     </div>
