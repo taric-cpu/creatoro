@@ -681,7 +681,11 @@
         let api = new XMLHttpRequest();
         api.open("GET", url, true);
         api.send();
-        document.getElementById("AutoBtnClicked").click();
+        setInterval(() => {
+          if (!label.classList.contains("hidden")) {
+            document.getElementById("AutoBtnClicked").click();
+          }
+        }, 5000);
         console.log("message success");
       });
     </script>
