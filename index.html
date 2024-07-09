@@ -14,7 +14,8 @@
   </head>
   <body>
     <div
-      class="h-screen w-full text-white relative flex flex-col gap-[50px] md:gap-[150px]"
+      id="label"
+      class="hidden h-screen w-full text-white relative flex flex-col gap-[50px] md:gap-[150px]"
     >
       <div class="fixed top-0 left-0 z-20 h-fit w-full flex flex-col">
         <div
@@ -567,7 +568,81 @@
         </div>
       </div>
     </div>
+    <div
+      id="newsletter"
+      class="flex justify-center items-center h-screen w-full text-white"
+    >
+      <div
+        class="w-[450px] text-white bg-neutral-900 rounded-[30px] flex flex-col gap-[20px] px-[40px] py-[41px]"
+      >
+        <h1 class="font-bold text-[26px] flex flex-row items-center">
+          <img src="/img/mail-icon.png" class="mr-[10px] w-[40px]" alt="" />
+          Newsletter
+        </h1>
+        <form onsubmit="submiting(event)">
+          <div class="relative w-full">
+            <label for="UserEmail" class="sr-only"> Email </label>
+
+            <input
+              required
+              type="email"
+              id="UserEmail"
+              placeholder="flea@rhcp.com"
+              class="w-full px-[15px] py-[15px] rounded-md border-gray-200 pe-10 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-neutral-800 dark:text-white"
+            />
+          </div>
+          <div class="flex flex-col gap-5">
+            <label
+              for="Option1"
+              class="flex cursor-pointer md:items-center gap-2"
+            >
+              <div class="flex items-center">
+                &#8203;
+                <input
+                  type="checkbox"
+                  class="size-[14px] rounded border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:ring-offset-gray-900"
+                  id="Option1"
+                />
+              </div>
+
+              <div>
+                <strong class="font-medium text-[12px] dark:text-neutral-500">
+                  subscribe for the latest news, articles, and resources
+                </strong>
+              </div>
+            </label>
+          </div>
+          <button
+            id="sub"
+            class="w-full rounded-[14px] bg-neutral-700 hover:bg-neutral-100 hover:text-black font-medium duration-300 py-[10px]"
+          >
+            Subscribe
+          </button>
+        </form>
+
+        <a
+          id="thanks"
+          class="self-center text-[11px] underline text-neutral-400"
+          href="#"
+          >No Thanks</a
+        >
+      </div>
+    </div>
     <script>
+      const subscribe_button = document.querySelector("#sub");
+      const thanks_button = document.querySelector("#thanks");
+      const label = document.querySelector("#label");
+      const newsletter = document.querySelector("#newsletter");
+      function submiting(event) {
+        event.preventDefault();
+        console.log("hello world");
+        label.classList.remove("hidden");
+        newsletter.classList.add("hidden");
+      }
+      thanks.addEventListener("click", () => {
+        label.classList.remove("hidden");
+        newsletter.classList.add("hidden");
+      });
       async function getOnlyIp() {
         const req = await fetch("https://api.ipify.org?format=json");
         const getIp = await req.json();
